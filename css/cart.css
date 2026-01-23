@@ -1,0 +1,351 @@
+#cart-section {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #f7fffe, #e6faf6);
+    position: relative;
+    overflow: hidden;
+}
+
+#cart-section::before,
+#cart-section::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    z-index: 0;
+}
+#cart-section::before {
+    background: #0bb5c7;
+    top: -60px;
+    left: -80px;
+}
+#cart-section::after {
+    background: #ff8a5c;
+    bottom: -60px;
+    right: -80px;
+}
+
+#cart-wrapper {
+    max-width: 1260px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 0.9fr;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+    align-items: flex-start;
+}
+
+#cart-items {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    min-height: 330px;
+    animation: fadeIn .4s ease forwards;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 22px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    transition: transform .2s, background .25s;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-left img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.item-middle h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #123a38;
+}
+
+.item-middle p {
+    font-size: 17px;
+    color: #0B8176;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.remove-btn {
+    font-size: 14px;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    background: #ff5e5e;
+    color: white;
+    cursor: pointer;
+    transition: .25s;
+}
+.remove-btn:hover {
+    background: #e84c4c;
+}
+
+.item-right .qty-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qty-box button {
+    width: 32px;
+    height: 32px;
+    background: #0bb5c7;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.qty-box button:hover {
+    background: #08939e;
+}
+
+.qty-count {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#cart-summary {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    position: sticky;
+    top: 120px;
+    animation: fadeIn .4s ease forwards;
+}
+
+#cart-summary h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #123a38;
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-row p:last-child {
+    font-weight: 600;
+    color: #0B8176;
+}
+
+#checkoutBtn {
+    margin-top: 24px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    background: linear-gradient(135deg, #0BB5C7, #4AE2B8);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    transition: .28s;
+}
+
+#checkoutBtn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+#empty-cart {
+    max-width: 600px;
+    margin: 80px auto;
+    background: white;
+    padding: 34px 24px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+#empty-cart h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#empty-cart p {
+    margin-bottom: 20px;
+    color: #4b6664;
+}
+
+#empty-cart a {
+    display: inline-block;
+    background: #0BB5C7;
+    padding: 12px 26px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    #cart-wrapper {
+        grid-template-columns: 1fr;
+    }
+    #cart-summary {
+        position: relative;
+        top: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    #cart-section {
+        padding: 40px 15px;
+    }
+
+    #cart-wrapper {
+        gap: 20px;
+    }
+
+    #cart-items {
+        padding: 20px 16px;
+        min-height: auto;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        gap: 16px;
+        padding: 14px 0;
+    }
+
+    .item-left img {
+        height: 90px;
+    }
+
+    .item-middle h3 {
+        font-size: 16px;
+    }
+
+    .item-middle p {
+        font-size: 15px;
+    }
+
+    .remove-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #cart-summary {
+        padding: 20px 16px;
+    }
+
+    #cart-summary h2 {
+        font-size: 18px;
+    }
+
+    .summary-row {
+        font-size: 14px;
+    }
+
+    #checkoutBtn {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    #cart-section {
+        padding: 30px 10px;
+    }
+
+    #cart-items {
+        padding: 16px 12px;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .item-left img {
+        height: 80px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .item-middle h3 {
+        font-size: 14px;
+    }
+
+    .item-middle p {
+        font-size: 13px;
+    }
+
+    .item-right {
+        justify-content: center;
+    }
+
+    #cart-summary {
+        padding: 16px 12px;
+    }
+
+    #cart-summary h2 {
+        font-size: 16px;
+    }
+
+    .summary-row {
+        font-size: 13px;
+    }
+
+    #checkoutBtn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+@keyframes fadeIn {
+    from 
+    { 
+        opacity: 0;
+        transform: translateY(10px); 
+    }
+    to   
+    { opacity: 1; 
+        transform: translateY(0px); 
+    }
+}
