@@ -1,123 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clothify - Shop Fashion Online</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Clothify - Buy trendy clothes online. Shirts, hoodies, jeans, jackets and more.">
-    <meta name="keywords" content="clothes, shopping, fashion, ecommerce, hoodie, jeans, shirts">
-    <meta name="author" content="Clothify Developers">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta
+      name="description"
+      content="Clothify - Buy trendy clothes online. Shirts, hoodies, jeans, jackets and more."
+    />
+    <meta
+      name="keywords"
+      content="clothes, shopping, fashion, ecommerce, hoodie, jeans, shirts"
+    />
+    <meta name="author" content="Clothify Developers" />
+  </head>
+  <body>
     <header id="main-header">
-        <nav class="navbar">
-            <div class="nav-left">
-                <a href="index.html" class="logo">
-                    <img src="assets/NameLogo.png" alt="Clothify Logo">
-                </a>
-            </div>
-            <div class="nav-center">
-                <form id="searchForm">
-                    <input type="text" id="searchInput" placeholder="Search for clothes..." autocomplete="off">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-            <div class="nav-right">
-                <a href="profile.html" class="nav-btn profile-icon" title="Profile">
-                    <i class="fas fa-user-circle"></i>
-                </a>
-                <a href="cart.html" class="nav-btn" id="cartBtn">Cart (<span id="cartCount">0</span>)</a>
-                <a href="login.html" class="nav-btn" id="loginBtn">Login</a>
-            </div>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-        <div class="nav-menu" id="navMenu">
-            <a href="profile.html" class="nav-menu-item profile-icon-menu">
-                <i class="fas fa-user-circle"></i>
-            </a>
-            <a href="cart.html" class="nav-menu-item" id="cartBtnMobile">Cart (<span id="cartCountMobile">0</span>)</a>
-            <a href="login.html" class="nav-menu-item">Login</a>
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo">
+            <img src="assets/NameLogo.png" alt="Clothify Logo" />
+          </a>
         </div>
+        <div class="nav-center">
+          <form id="searchForm">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search for clothes..."
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <button class="search-btn-mobile" id="searchBtnMobile" title="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="nav-right">
+          <a href="profile.html" class="nav-btn profile-icon" title="Profile">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <a href="cart.html" class="nav-btn" id="cartBtn"
+            >Cart (<span id="cartCount">0</span>)</a
+          >
+          <a href="login.html" class="nav-btn" id="loginBtn">Login</a>
+        </div>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <div class="search-bar-overlay" id="searchBarOverlay"></div>
+      <div class="search-bar-mobile" id="searchBarMobile">
+        <form id="searchFormMobile">
+          <input
+            type="text"
+            id="searchInputMobile"
+            placeholder="Search for clothes..."
+            autocomplete="off"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <button type="button" class="search-close-btn" id="searchCloseMobile">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="profile.html" class="nav-menu-item profile-icon-menu">
+          <i class="fas fa-user-circle"></i>
+        </a>
+        <a href="cart.html" class="nav-menu-item" id="cartBtnMobile"
+          >Cart (<span id="cartCountMobile">0</span>)</a
+        >
+        <a href="login.html" class="nav-menu-item">Login</a>
+      </div>
     </header>
     <section id="hero-section">
-        <div class="hero-content">
-            <h1>Discover Your Style</h1>
-            <p>Trendy fashion delivered at your doorstep.</p>
-            <a href="#product-section" class="btn-primary">Shop Now</a>
-        </div>
+      <div class="hero-content">
+        <h1>Discover Your Style</h1>
+        <p>Trendy fashion delivered at your doorstep.</p>
+        <a href="#product-section" class="btn-primary">Shop Now</a>
+      </div>
     </section>
     <section id="category-filter">
-        <h2>Shop by Category</h2>
-        <div class="categories">
-            <button class="category-btn" data-category="all">All</button>
-            <button class="category-btn" data-category="mens">Men's</button>
-            <button class="category-btn" data-category="womens">Women's</button>
-            <button class="category-btn" data-category="kids">Kids</button>
-            <button class="category-btn" data-category="winter">Winter Wear</button>
-            <button class="category-btn" data-category="sports">Sportswear</button>
-        </div>
+      <h2>Shop by Category</h2>
+      <div class="categories">
+        <button class="category-btn" data-category="all">All</button>
+        <button class="category-btn" data-category="mens">Men's</button>
+        <button class="category-btn" data-category="womens">Women's</button>
+        <button class="category-btn" data-category="kids">Kids</button>
+        <button class="category-btn" data-category="winter">Winter Wear</button>
+        <button class="category-btn" data-category="sports">Sportswear</button>
+      </div>
     </section>
     <section id="product-section">
-        <h2>Featured Products</h2>
-        <div id="product-container" class="product-grid"></div>
+      <h2>Featured Products</h2>
+      <div id="product-container" class="product-grid"></div>
     </section>
     <section id="highlights">
-        <div class="highlight-grid">
-            <div class="highlight-item">
-                <h3>Free Delivery</h3>
-                <p>On orders above ₹499</p>
-            </div>
-            <div class="highlight-item">
-                <h3>Easy Returns</h3>
-                <p>7 days no-question returns</p>
-            </div>
-            <div class="highlight-item">
-                <h3>24/7 Support</h3>
-                <p>We're here anytime</p>
-            </div>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <h3>Free Delivery</h3>
+          <p>On orders above ₹499</p>
         </div>
+        <div class="highlight-item">
+          <h3>Easy Returns</h3>
+          <p>7 days no-question returns</p>
+        </div>
+        <div class="highlight-item">
+          <h3>24/7 Support</h3>
+          <p>We're here anytime</p>
+        </div>
+      </div>
     </section>
     <footer id="main-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Clothify</h4>
-                <p>Discover fashion that suits your lifestyle.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Customer Service</h4>
-                <ul>
-                    <li><a href="#">Track Order</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Help Center</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p>Email: support@clothify.com</p>
-                <p>Phone: +91 XXXXXXXXXX</p>
-            </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Clothify</h4>
+          <p>Discover fashion that suits your lifestyle.</p>
         </div>
-        <div class="footer-bottom">
-            <marquee behavior="" direction="left">
-                <p>© 2026 Clothify. All Rights Reserved.</p>
-            </marquee>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>Email: support@clothify.com</p>
+          <p>Phone: +91 XXXXXXXXXX</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <marquee behavior="" direction="left">
+          <p>© 2026 Clothify. All Rights Reserved.</p>
+        </marquee>
+      </div>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
@@ -125,5 +164,5 @@
     <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
     <script src="firebase-config/firebaseConfig.js"></script>
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
